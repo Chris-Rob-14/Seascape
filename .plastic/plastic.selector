@@ -1,0 +1,4 @@
+repository "Seascape 2@AKUC@cloud"
+  path "/"
+    br "/main"
+    co "/main"
