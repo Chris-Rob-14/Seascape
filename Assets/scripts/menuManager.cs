@@ -5,14 +5,37 @@ using UnityEngine;
 
 public class menuManager : MonoBehaviour
 {
+    public GameObject Panel;
+    public playerController playerControllerScript;
+    public scoreManager scoreManager;
+
     public void StartGame()
     {
-        //Test
-        SceneManager.LoadScene("GameScene");  // Assurez-vous que le nom de la scène est correct
+        Debug.Log("StartGame is called"); // Cette ligne vous aidera à savoir si la méthode est exécutée
+
+        if (Panel != null)
+        {
+            Panel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Panel reference not set in the menuManager.");
+        }
+
+        if (playerControllerScript != null)
+        {
+            scoreManager.StartGame();
+            playerControllerScript.StartMoving();
+        }
+        else
+        {
+            Debug.LogWarning("PlayerControllerScript reference not set in the menuManager.");
+        }
     }
 
     public void QuitGame()
     {
+        Debug.Log("QuitGame is called"); // Cette ligne vous aidera à savoir si la méthode est exécutée
         Application.Quit();
     }
 }
