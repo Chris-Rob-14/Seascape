@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class objectSpawner : MonoBehaviour
 {
-   public GameObject[] obstacles;
-    public GameObject[] collectibles;
+   public GameObject[] Obstacle;
+    public GameObject[] Collectible;
     public float spawnInterval = 1.5f;
     private float timer;
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
@@ -22,7 +21,7 @@ public class objectSpawner : MonoBehaviour
 
     void SpawnObject()
     {
-        GameObject objToSpawn = Random.Range(0, 2) == 0 ? GetRandomObject(obstacles) : GetRandomObject(collectibles);
+        GameObject objToSpawn = Random.Range(0, 2) == 0 ? GetRandomObject(Obstacle) : GetRandomObject(Collectible);
         Instantiate(objToSpawn, new Vector3(Random.Range(-5, 5), 0, transform.position.z), Quaternion.identity);
     }
 

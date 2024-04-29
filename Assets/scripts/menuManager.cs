@@ -11,7 +11,7 @@ public class menuManager : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("StartGame is called"); // Cette ligne vous aidera à savoir si la méthode est exécutée
+        Debug.Log("StartGame is called");
 
         if (Panel != null)
         {
@@ -24,8 +24,8 @@ public class menuManager : MonoBehaviour
 
         if (playerControllerScript != null)
         {
-            scoreManager.StartGame();
             playerControllerScript.StartMoving();
+            scoreManager.StartGame();
         }
         else
         {
@@ -35,7 +35,7 @@ public class menuManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("QuitGame is called"); // Cette ligne vous aidera à savoir si la méthode est exécutée
+        Debug.Log("QuitGame is called");
         Application.Quit();
     }
 }
